@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand bg-dark border-bottom border-body bg-body-tertiary" data-bs-theme="dark">
+    <!-- Navbar content -->
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home">
+             Movify
+      </a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/home"><i class="fa fa-home" aria-hidden="true"></i></a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="loginService.isLoggedIn()" class="nav-link active" aria-current="page" routerLink="/viewWishlist">Wishlist</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="loginService.isLoggedIn()" class="nav-link active" aria-current="page" routerLink="/dashboard">Dashboard</a>
+        </li>
+        </ul>
+      </div>
+      <button *ngIf="!loginService.isLoggedIn()" type="button" class="btn btn-light" routerLink="/login">Login</button>
+      <button *ngIf="loginService.isLoggedIn()" type="button" class="btn btn-light" routerLink="/login" (click)="loginService.logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+    </div>
+  </nav>
+ 

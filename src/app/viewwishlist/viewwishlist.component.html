@@ -1,0 +1,40 @@
+<section id="team" class="pb-5">
+  <div class="container">
+      
+      <div class="row">
+<div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let movie of viewWishlist">
+  <div class="image-flip" >
+      <div class="mainflip flip-0">
+          <div class="frontside">
+              <div class="card">
+                  <div class="card-body text-center">
+                      <p><img class=" img-fluid" src="{{movie.image}}" alt="card image"></p>
+                      <h4 class="card-title"><b>{{ movie.title }}</b></h4>
+                      <p class="card-text"><b>IMDB Rating :</b>{{ movie.rating }}</p>
+                      <p class="card-text"><b>Ranking :</b>{{ movie.id }}</p>
+
+                      <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="backside">
+              <div class="card">
+                  <div class="card-body text-center mt-4">
+                      <h4 class="card-title"><b>{{ movie.title }}</b></h4>
+                      <p><b>Description:</b></p>
+                      <p class="card-text">{{movie.description}}</p>
+                      <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <button  (click)="removeFromWishlist(movie)" class="btn btn-primary"><i class="fa fa-times" aria-hidden="true"></i>
+                            </button>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
